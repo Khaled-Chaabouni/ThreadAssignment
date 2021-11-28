@@ -2,7 +2,7 @@ public class ThreadAssignment {
 
     static class Counter {
         int count;
-        synchronized void count() {
+        void count() {
             for(int i=350;i>0;i--){
                 count+=1;
                 System.out.println(i);
@@ -19,7 +19,7 @@ public class ThreadAssignment {
         }
 
         @Override
-        public void run() {
+        public synchronized void run() {
             counter.count();
         }
     }
